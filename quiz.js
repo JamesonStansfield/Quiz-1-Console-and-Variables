@@ -32,7 +32,26 @@ else if(gradePrompt > 60) {
 else if(gradePrompt < 60) {
     console.log('You have a F!');
 }
+
 //Program 3: Leap Year Checker
+
+let year = prompt('What is the year?');
+let leapYear = false;
+
+if (year % 4 === 0) {
+    if (year % 100 === 0) {
+        if (year % 400 === 0) { 
+            leapYear = true;
+        }
+    } else {
+        leapYear = true;
+    }
+} 
+if (leapYear) {
+    console.log(year + ' is a leap year!');
+} else {
+    console.log(year + ' is not a leap year.');
+}
 
 
 //Program 4: Largest Number Finder
@@ -40,23 +59,12 @@ else if(gradePrompt < 60) {
 let num1 = prompt('What is the first number?');
 let num2 = prompt('What is the second number?');
 let num3 = prompt('What is the third number?');
+let largestNum = num1;
 
-if (num1 > num2) {
-    let largestNum = num1
+if (num2 > largestNum) {
+    largestNum = num2;
 }
-else if (num1 > num3) {
-    let largestNum = num1
-}
-else if (num2 > num1) {
-    let largestNum = num2
-}
-else if (num2 > num3) {
-    let largestNum = num2
-}
-else if (num3 > num1) {
-    let largestNum = num3
-}
-else if (num3 > num2) {
-    let largestNum = num3
+if (num3 > largestNum) {
+    largestNum = num3;
 }
 console.log('The largest number is ' + largestNum + '.');
